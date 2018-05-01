@@ -1,0 +1,53 @@
+<h1>Eat-Da-Burger!</h1>
+
+<main>
+  <div class="container">
+    <div class="panel-body">
+                    <div class="row">
+                        <div class="col s12">
+                        {{#each burgers}}
+                            {{#if this.devoured}}
+                        </div>
+                                <div class="burgers col col-sm-6">
+                                    <div><p style="float:left;">
+                                        <img class="burger-img img-responsive" src="/assets/img/burger.png" width="30px" id="burger_icon">
+                                        <p class="burger-name">{{this.burger_name}}</p>
+                                    </div>
+                                    <div class="col col-sm-3">
+                                        <form action="burgers/devour/{{this.id}}?_method=PUT" method="POST">
+                                            <input type="hidden" name="devoured" value="ture">
+                                            <button class="btn btn-sm btn-success center-block" type="submit">Devour It!</button>
+                                        </form>
+                                    </div>
+                                </div>
+                            {{/if}}
+                        {{/each}}
+                    </div>
+    <div class="container">                
+      <div class="col s6">
+        {{#each burgers}}
+          {{#unless this.devoured}}
+            <div class='burgerEaten'>
+              <div>
+                {{this.burger_name}}
+              </div>
+            </div>
+          {{/unless}}
+        {{/each}}
+      </div>
+     </div> 
+    </div>
+  </div>
+</main>
+
+<h2>Add A Burger Option</h2>
+
+<div class="row">
+  <div class="col s12">
+    <form action="/burgers" method="POST">
+      <input type="text" id="name" name="burger_name" placeholder="Type in your choice of burger!">
+      <button type="submit" class="addBurgerButton">Add The Burger</button>
+    </form>
+  </div>
+</div>
+

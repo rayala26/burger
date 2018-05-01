@@ -1,0 +1,27 @@
+#da_burger{
+	display: block;
+	margin: auto;
+}
+h1 {
+    text-align: center;
+    font-family: 'Gugi';
+    font-size: 65px;
+    margin: 50px;
+}
+h2 {
+    text-align: center;
+    font-family: 'Gugi';
+    font-size: 40px;
+    margin: 50px;
+}
+html {
+    background-color: #FFC04C;
+}
+body {
+    width: 75%;
+    margin: 0px auto;
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+    background-color: white;
+}
